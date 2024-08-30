@@ -1,0 +1,30 @@
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<h3>My thought</h3>
+
+{% for thought in AllThoughts %}
+
+    <div class="Container bg-white shadow-md p-5 form-layout">
+        {{thought.Title}}
+        <br>
+        {{thought.Content}}
+        <br>
+        {{thought.date_posted}}
+        <br>
+        {{thought.user}}
+
+        <a href="{% url 'update-thought' thought.id %}">Update Thought</a>
+        &nbsp;
+        <a href="{% url 'delete-thought' thought.id %}">Delete a thought</a>
+        <br>
+
+    </div>
+<br>
+ {% endfor %}
+<br>
+<br>
+
+{%endblock%}

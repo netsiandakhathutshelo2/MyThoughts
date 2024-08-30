@@ -1,0 +1,23 @@
+
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<div class="Container bg-white shadow-md p-5 form-layout">
+    <h3>Create thought</h3>
+
+   <br><br>
+    <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{CreateThoughtForm|crispy}}
+
+            <button class="btn btn-secondary btn-md w-40 btn-block p-2" type="submit"> &nbsp; Create Thought</button>
+    </form>
+</div>
+<br>
+<br>
+
+{%endblock%}

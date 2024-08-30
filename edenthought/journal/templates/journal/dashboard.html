@@ -1,0 +1,16 @@
+
+{% extends 'journal/navbar.html' %}
+
+{% block content %}
+<br>
+<div class="Container bg-white shadow-md p-5 form-layout">
+    <h1>my dashboard</h1>
+
+    {{user}}
+    <br> <br>
+    <a class="btn btn-primary navbar-btn" type="button"  href="{%url 'user-logout'%}">Logout</a>
+
+</div>
+
+
+{%endblock%}
