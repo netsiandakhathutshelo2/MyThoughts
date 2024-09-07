@@ -1,0 +1,50 @@
+
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<div class="Container bg-white shadow-md p-5 form-layout">
+    <h3>update Username and Email</h3>
+
+   <br><br>
+    <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{UserUpdateForm|crispy}}
+
+            <button class="btn btn-secondary btn-md w-40 btn-block p-2" type="submit"> &nbsp; Update User</button>
+
+
+    </form>
+</div>
+
+<div class="Container bg-white shadow-md p-5 form-layout">
+
+    <h3>update Profile Picture</h3>
+
+   <br><br>
+
+    <form method="POST" autocomplete="off" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{UserProfileForm|crispy}}
+
+            <button class="btn btn-secondary btn-md w-40 btn-block p-2" type="submit"> &nbsp Upload Profile Picture</button>
+
+    </form>
+
+</div>
+
+<br>
+
+<div class="Container bg-white shadow-md p-5 form-layout">
+    <h3>Delete Account</h3>
+    <a class="nav_link"  href="{% url 'Delete-Account' %}">Proceed to Delete your Account</a>
+</div>>
+<br>
+<br>
+
+{%endblock%}

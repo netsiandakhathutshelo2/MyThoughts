@@ -1,0 +1,19 @@
+
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<div class="Container bg-white shadow-md p-5 form-layout">
+    <form method="POST" autocomplete="off">
+
+    {% csrf_token %}
+    <h3>Are you sure you want to delete your Account?</h3>
+
+    <button class="btn btn-secondary btn-md w-40 btn-block p-2" type="submit"> &nbsp; Delete Account</button>
+    </form>
+    <br>
+    <a class="nav_link"  href="{% url 'profile-management' %}">Return to Profile Management</a>
+    <br>
+</div>
+{%endblock%}

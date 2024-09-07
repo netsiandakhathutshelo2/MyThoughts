@@ -11,4 +11,6 @@ urlpatterns = [
     path('my-thought', views.my_thought, name="my-thought"),
     path('update-thought/<str:pk>', views.update_thought, name="update-thought"),
     path('delete-thought/<str:pk>', views.delete_thought, name="delete-thought"),
+    path('profile-management', views.profile_management, name="profile-management"),
+    path('Delete-Account', views.delete_account, name="Delete-Account"),
 ]
