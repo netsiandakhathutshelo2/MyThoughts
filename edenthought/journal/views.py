@@ -29,7 +29,8 @@ def register(request):
             current_user = form.save(commit=False)
 
             form.save()
-            send_mail('Welcome to Eden Thoughts', 'congratulation for creating an account', settings.DEFAULT_FROM_EMAIL,
+            print("khathu" + "  " + current_user.email + "  " + settings.DEFAULT_FROM_EMAIL)
+            send_mail("Welcome to Eden Thoughts", "Congratulation for creating an account", settings.DEFAULT_FROM_EMAIL,
                       [current_user.email])
 
             profile = Profile.objects.create(user=current_user)
